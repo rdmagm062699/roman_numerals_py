@@ -7,4 +7,7 @@ class RomanNumeralValidator(object):
         if all(numeral in VALID_NUMERALS for numeral in roman_numeral):
             return True
 
+        if all(numeral in [x.lower() for x in VALID_NUMERALS] for numeral in roman_numeral):
+            return True
+
         return False

@@ -25,3 +25,15 @@ class RomanNumeralValidatorTest(unittest.TestCase):
         result = self.validator.check_content(numerals)
 
         nt.assert_equal(result, False)
+
+    def test_check_content_string_contains_all_lowercase_valid_values_returns_true(self):
+        numerals = 'ivxlcdm'
+        result = self.validator.check_content(numerals)
+
+        nt.assert_equal(result, True)
+
+    def test_check_content_string_contains_mixed_case_valid_values_returns_false(self):
+        numerals = 'IvXlCdm'
+        result = self.validator.check_content(numerals)
+
+        nt.assert_equal(result, False)
